@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Validator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Scientific Number Validator</h2>
+    <input type="text" id="inputNumber" placeholder="Enter a number">
+    <button onclick="validateNumber()">Check</button>
+    <p id="message"></p>
+    
+    <div id="about">
+        <h3>About</h3>
+        <p><strong>Name:</strong> Aristo Kaunang</p>
+        <p><strong>NIM:</strong> 231011060017</p>
+        <p><strong>Prodi:</strong> Information System</p>
+    </div>
+
+    <script>
+        function validateNumber() {
+            const input = document.getElementById("inputNumber").value.trim();
+            const scientificNumberPattern = /^[+-]?\d+(\.\d+)?([eE][+-]?\d+)?$/;
+            const messageElement = document.getElementById("message");
+            
+            if (scientificNumberPattern.test(input)) {
+                messageElement.textContent = "Yes, it is a number";
+                messageElement.style.color = "green";
+            } else {
+                messageElement.textContent = "No, it is not a number";
+                messageElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
